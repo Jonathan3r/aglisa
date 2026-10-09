@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AGLISA | Agua Limpia y Saneamiento</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="acceso-abierto">
+
+    <div class="franja-institucional">
+
+        <img class="logo-institucion" src="imagenes/logo-uabcs.png"
+            alt="Logo de la Universidad Autónoma de Baja California Sur (UABCS)">
+
+        <p class="franja-texto">
+            Universidad Autónoma de Baja California Sur · Departamento de Sistemas
+        </p>
+
+        <img class="logo-institucion" src="imagenes/logo-sistemas.png"
+            alt="Logo del Departamento de Sistemas">
+
+    </div>
+
+    <!-- PANTALLA DE BIENVENIDA: REGISTRO E INICIO DE SESIÓN CON GOTI -->
+    <div class="pantalla-acceso" id="pantallaAcceso">
+
+        <div class="burbujas">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="acceso-contenido">
+
+            <div class="mascota-zona">
+
+                <button class="mascota-boton" id="mascotaBotonAcceso" type="button"
+                    aria-label="Toca a Goti para saludarlo">
+
+                    <svg class="mascota-svg animo-feliz" id="gotiSvgAcceso" viewBox="0 0 200 256"
+                        aria-hidden="true" focusable="false">
+                        <defs>
+                            <linearGradient id="gotiCuerpoAcceso" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0" stop-color="#f0fcff" />
+                                <stop offset="1" stop-color="#7fd8ee" />
+                            </linearGradient>
+                        </defs>
+
+                        <ellipse cx="100" cy="250" rx="46" ry="6" fill="rgba(0,35,70,0.18)" />
+
+                        <g class="goti-salto">
+
+                            <g stroke="#023e8a" stroke-width="8" stroke-linecap="round">
+                                <line x1="86" y1="208" x2="86" y2="234" />
+                                <line x1="114" y1="208" x2="114" y2="234" />
+                            </g>
+                            <ellipse cx="80" cy="240" rx="14" ry="7" fill="#023e8a" />
+                            <ellipse cx="120" cy="240" rx="14" ry="7" fill="#023e8a" />
+
+                            <g class="goti-brazo-izq">
+                                <path d="M44 150 Q20 156 14 180" fill="none" stroke="#023e8a"
+                                    stroke-width="8" stroke-linecap="round" />
+                                <circle cx="14" cy="184" r="9" fill="#caf0f8" stroke="#023e8a" stroke-width="4" />
+                            </g>
+                            <g class="goti-brazo-der">
+                                <path d="M156 150 Q182 142 188 118" fill="none" stroke="#023e8a"
+                                    stroke-width="8" stroke-linecap="round" />
+                                <circle cx="188" cy="113" r="9" fill="#caf0f8" stroke="#023e8a" stroke-width="4" />
+                            </g>
+
+                            <path d="M100 16 C100 16 42 92 42 152 C42 186 68 214 100 214 C132 214 158 186 158 152 C158 92 100 16 100 16 Z"
+                                fill="url(#gotiCuerpoAcceso)" stroke="#023e8a" stroke-width="5" stroke-linejoin="round" />
+                            <path d="M62 142 Q58 114 78 86" fill="none" stroke="#ffffff" stroke-opacity="0.75"
+                                stroke-width="6" stroke-linecap="round" />
+
+                            <ellipse cx="62" cy="170" rx="8" ry="5" fill="#ff8fa3" fill-opacity="0.55" />
+                            <ellipse cx="138" cy="170" rx="8" ry="5" fill="#ff8fa3" fill-opacity="0.55" />
+
+                            <g class="goti-ojos">
+                                <circle cx="80" cy="146" r="14" fill="#ffffff" stroke="#023e8a" stroke-width="3" />
+                                <circle cx="120" cy="146" r="14" fill="#ffffff" stroke="#023e8a" stroke-width="3" />
+                                <g class="goti-pupilas">
+                                    <circle cx="80" cy="146" r="7" fill="#023e8a" />
+                                    <circle cx="120" cy="146" r="7" fill="#023e8a" />
+                                    <circle cx="82.5" cy="143" r="2.2" fill="#ffffff" />
+                                    <circle cx="122.5" cy="143" r="2.2" fill="#ffffff" />
+                                </g>
+                            </g>
+
+                            <path class="boca boca-feliz" d="M86 172 Q100 190 114 172" fill="none"
+                                stroke="#023e8a" stroke-width="4" stroke-linecap="round" />
+                            <g class="boca boca-contenta">
+                                <path d="M84 168 Q100 200 116 168 Z" fill="#023e8a" stroke="#023e8a"
+                                    stroke-width="3" stroke-linejoin="round" />
+                                <ellipse cx="100" cy="184" rx="8" ry="4" fill="#ff8fa3" />
+                            </g>
+                            <path class="boca boca-triste" d="M86 184 Q100 168 114 184" fill="none"
+                                stroke="#023e8a" stroke-width="4" stroke-linecap="round" />
+                            <ellipse class="boca boca-sorprendida" cx="100" cy="178" rx="7" ry="9" fill="#023e8a" />
+                        </g>
+                    </svg>
+                </button>
+
+                <div class="mascota-globo" id="globoAcceso" aria-live="polite">
+                    <span class="mascota-nombre">Goti</span>
+                    <span class="mascota-texto"></span>
+                </div>
+
+            </div>
+
+            <div class="tarjeta-acceso">
+
+                <div class="paso-acceso paso-centrado" id="pasoInicio">
+
+                    <h2>Bienvenido a AGLISA</h2>
+                    <p class="texto-acceso">Agua limpia y saneamiento para todos</p>
+
+                    <button class="boton-acceso" id="botonIrIngreso" type="button">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        Ya tengo cuenta
+                    </button>
+
+                    <button class="boton-acceso boton-acceso-claro" id="botonIrRegistro" type="button">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Soy nuevo, crear mi cuenta
+                    </button>
+
+                    <button class="enlace-acceso" id="botonInvitado" type="button">
+                        Entrar sin cuenta
+                    </button>
+
+                </div>
+
+                <form class="paso-acceso" id="formularioIngreso" novalidate hidden>
+
+                    <h2>Iniciar sesión</h2>
+                    <p class="texto-acceso">Escribe tu usuario y tu contraseña.</p>
+
+                    <label for="ingresoUsuario">Usuario</label>
+                    <input class="campo-acceso" type="text" id="ingresoUsuario"
+                        autocomplete="username" maxlength="20" placeholder="Tu nombre de usuario">
+
+                    <label for="ingresoContrasena">Contraseña</label>
+                    <input class="campo-acceso" type="password" id="ingresoContrasena"
+                        autocomplete="current-password" placeholder="Tu contraseña">
+
+                    <label class="mostrar-contrasena">
+                        <input type="checkbox" data-mostrar-contrasena="ingresoContrasena">
+                        Mostrar contraseña
+                    </label>
+
+                    <button class="boton-acceso" type="submit">Entrar</button>
+
+                    <button class="enlace-acceso" type="button" data-volver>Volver</button>
+
+                </form>
+
+                <form class="paso-acceso" id="formularioRegistro" novalidate hidden>
+
+                    <h2>Crear mi cuenta</h2>
+                    <p class="texto-acceso">Solo necesitamos cuatro datos.</p>
+
+                    <label for="registroUsuario">Nombre de usuario</label>
+                    <input class="campo-acceso" type="text" id="registroUsuario"
+                        autocomplete="off" maxlength="20" placeholder="Inventa uno, no uses tu nombre real">
+                    <p class="ayuda-campo">De 3 a 20 letras o números, sin espacios.</p>
+
+                    <label for="registroContrasena">Contraseña</label>
+                    <input class="campo-acceso" type="password" id="registroContrasena"
+                        autocomplete="new-password" placeholder="Mínimo 6 caracteres">
+
+                    <label class="mostrar-contrasena">
+                        <input type="checkbox" data-mostrar-contrasena="registroContrasena">
+                        Mostrar contraseña
+                    </label>
+
+                    <label for="registroEscuela">Escuela</label>
+                    <input class="campo-acceso" type="text" id="registroEscuela"
+                        autocomplete="off" maxlength="60" placeholder="Nombre de tu escuela">
+
+                    <span class="etiqueta-campo" id="etiquetaNivel">Nivel</span>
+
+                    <div class="opciones-nivel" role="radiogroup" aria-labelledby="etiquetaNivel">
+                        <label class="opcion-nivel">
+                            <input type="radio" name="nivelRegistro" value="primaria">
+                            <span><i class="fa-solid fa-child"></i> Primaria</span>
+                        </label>
+                        <label class="opcion-nivel">
+                            <input type="radio" name="nivelRegistro" value="secundaria">
+                            <span><i class="fa-solid fa-user-graduate"></i> Secundaria</span>
+                        </label>
+                    </div>
+
+                    <button class="boton-acceso" type="submit">Crear cuenta</button>
+
+                    <button class="enlace-acceso" type="button" data-volver>Volver</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SITIO COMPLETO (SE MUESTRA DESPUÉS DE ENTRAR) -->
+    <div class="sitio" id="sitio" hidden>
+
+        <header class="encabezado">
+
+            <div class="logo">
+                <svg class="logo-goti" viewBox="30 8 140 215" role="img" aria-label="Goti, la gota de AGLISA">
+                    <path d="M100 16 C100 16 42 92 42 152 C42 186 68 214 100 214 C132 214 158 186 158 152 C158 92 100 16 100 16 Z"
+                        fill="#48cae4" stroke="#023e8a" stroke-width="8" stroke-linejoin="round" />
+                    <circle cx="80" cy="146" r="14" fill="#fff" />
+                    <circle cx="120" cy="146" r="14" fill="#fff" />
+                    <circle cx="80" cy="146" r="7" fill="#023e8a" />
+                    <circle cx="120" cy="146" r="7" fill="#023e8a" />
+                    <path d="M86 172 Q100 190 114 172" fill="none" stroke="#023e8a" stroke-width="5" stroke-linecap="round" />
+                </svg>
+                <h2>AGLISA</h2>
+            </div>
+
+            <nav class="menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#ods6">ODS 6</a>
+                <a href="#porque">Proyecto</a>
+                <a href="#metas">Metas</a>
+                <a href="#mapa">Mapa</a>
+                <a href="#viaje">Viaje</a>
+                <a href="#actua">Actúa</a>
+                <a href="#quiz">Quiz</a>
+            </nav>
+
+            <div class="zona-usuario">
+                <span class="nombre-sesion">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span id="nombreUsuarioSesion"></span>
+                </span>
+                <button class="boton-salir" id="botonSalir" type="button">Salir</button>
+            </div>
+
+        </header>
+
+        <section class="portada" id="inicio">
+
+            <div class="burbujas">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="contenido-portada">
+
+                <div class="mascota-zona">
+
+                    <button class="mascota-boton" id="mascotaBoton" type="button"
+                        aria-label="Toca a Goti para escuchar otro dato">
+
+                        <svg class="mascota-svg animo-feliz" id="gotiSvg" viewBox="0 0 200 256"
+                            aria-hidden="true" focusable="false">
+                            <defs>
+                                <linearGradient id="gotiCuerpo" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0" stop-color="#f0fcff" />
+                                    <stop offset="1" stop-color="#7fd8ee" />
+                                </linearGradient>
+                            </defs>
+
+                            <ellipse cx="100" cy="250" rx="46" ry="6" fill="rgba(0,35,70,0.18)" />
+
+                            <g class="goti-salto">
+
+                                <g stroke="#023e8a" stroke-width="8" stroke-linecap="round">
+                                    <line x1="86" y1="208" x2="86" y2="234" />
+                                    <line x1="114" y1="208" x2="114" y2="234" />
+                                </g>
+                                <ellipse cx="80" cy="240" rx="14" ry="7" fill="#023e8a" />
+                                <ellipse cx="120" cy="240" rx="14" ry="7" fill="#023e8a" />
+
+                                <g class="goti-brazo-izq">
+                                    <path d="M44 150 Q20 156 14 180" fill="none" stroke="#023e8a"
+                                        stroke-width="8" stroke-linecap="round" />
+                                    <circle cx="14" cy="184" r="9" fill="#caf0f8" stroke="#023e8a" stroke-width="4" />
+                                </g>
+                                <g class="goti-brazo-der">
+                                    <path d="M156 150 Q182 142 188 118" fill="none" stroke="#023e8a"
+                                        stroke-width="8" stroke-linecap="round" />
+                                    <circle cx="188" cy="113" r="9" fill="#caf0f8" stroke="#023e8a" stroke-width="4" />
+                                </g>
+
+                                <path d="M100 16 C100 16 42 92 42 152 C42 186 68 214 100 214 C132 214 158 186 158 152 C158 92 100 16 100 16 Z"
+                                    fill="url(#gotiCuerpo)" stroke="#023e8a" stroke-width="5" stroke-linejoin="round" />
+                                <path d="M62 142 Q58 114 78 86" fill="none" stroke="#ffffff" stroke-opacity="0.75"
+                                    stroke-width="6" stroke-linecap="round" />
+
+                                <ellipse cx="62" cy="170" rx="8" ry="5" fill="#ff8fa3" fill-opacity="0.55" />
+                                <ellipse cx="138" cy="170" rx="8" ry="5" fill="#ff8fa3" fill-opacity="0.55" />
+
+                                <g class="goti-ojos">
+                                    <circle cx="80" cy="146" r="14" fill="#ffffff" stroke="#023e8a" stroke-width="3" />
+                                    <circle cx="120" cy="146" r="14" fill="#ffffff" stroke="#023e8a" stroke-width="3" />
+                                    <g class="goti-pupilas">
+                                        <circle cx="80" cy="146" r="7" fill="#023e8a" />
+                                        <circle cx="120" cy="146" r="7" fill="#023e8a" />
+                                        <circle cx="82.5" cy="143" r="2.2" fill="#ffffff" />
+                                        <circle cx="122.5" cy="143" r="2.2" fill="#ffffff" />
+                                    </g>
+                                </g>
+
+                                <path class="boca boca-feliz" d="M86 172 Q100 190 114 172" fill="none"
+                                    stroke="#023e8a" stroke-width="4" stroke-linecap="round" />
+                                <g class="boca boca-contenta">
+                                    <path d="M84 168 Q100 200 116 168 Z" fill="#023e8a" stroke="#023e8a"
+                                        stroke-width="3" stroke-linejoin="round" />
+                                    <ellipse cx="100" cy="184" rx="8" ry="4" fill="#ff8fa3" />
+                                </g>
+                                <path class="boca boca-triste" d="M86 184 Q100 168 114 184" fill="none"
+                                    stroke="#023e8a" stroke-width="4" stroke-linecap="round" />
+                                <ellipse class="boca boca-sorprendida" cx="100" cy="178" rx="7" ry="9" fill="#023e8a" />
+                            </g>
+                        </svg>
+                    </button>
+
+                    <div class="mascota-globo" id="mascotaGlobo">
+                        <span class="mascota-nombre">Goti</span>
+                        <span class="mascota-texto"></span>
+                    </div>
+
+                </div>
+
+                <h1>
+                    Agua limpia para un
+                    <span>futuro sostenible</span>
+                </h1>
+
+                <p>
+                    Plataforma interactiva para concientizar sobre el
+                    Objetivo de Desarrollo Sostenible número 6.
+                </p>
+
+                <a href="#ods6" class="boton-explorar">
+                    Explorar plataforma
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <a href="#ods6" class="scroll-indicador">
+                <span>Descubre más</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="olas">
+                <div class="ola ola1"></div>
+                <div class="ola ola2"></div>
+            </div>
+
+        </section>
+
+        <section class="seccion-ods" id="ods6">
+
+            <div class="contenedor">
+
+                <span class="etiqueta">ODS 6</span>
+
+                <h2>¿Qué es el ODS 6?</h2>
+
+                <p>
+                    El Objetivo de Desarrollo Sostenible 6 busca garantizar
+                    la disponibilidad de agua potable y su gestión sostenible,
+                    así como el acceso a servicios de saneamiento e higiene
+                    para todos.
+                </p>
+
+            </div>
+
+        </section>
+
+        <div class="contenido-nivel" data-nivel="primaria">
+
+            <section class="seccion-contenido seccion-proyecto" id="porque">
+
+                <div class="contenedor-ancho">
+
+                    <span class="etiqueta">Nuestro proyecto</span>
+
+                    <h2>¿Por qué existe AGLISA?</h2>
+
+                    <div class="selector-nivel" role="group" aria-label="Elige tu nivel">
+                        <button class="boton-nivel activo" type="button" data-nivel="primaria" aria-pressed="true">
+                            <i class="fa-solid fa-child"></i>
+                            Primaria
+                        </button>
+                        <button class="boton-nivel" type="button" data-nivel="secundaria" aria-pressed="false">
+                            <i class="fa-solid fa-user-graduate"></i>
+                            Secundaria
+                        </button>
+                    </div>
+
+                    <p class="intro-nivel">
+                        <span class="texto-primaria">
+                            En muchas escuelas todavía se aprende sobre el agua solo con libros
+                            y explicaciones en el pizarrón. Hacen falta herramientas digitales
+                            y materiales nuevos que nos enseñen a cuidarla. Por eso creamos AGLISA.
+                        </span>
+                        <span class="texto-secundaria">
+                            En muchas comunidades escolares el uso responsable del agua se enseña
+                            con métodos tradicionales, casi sin herramientas digitales ni materiales
+                            actualizados sobre sostenibilidad hídrica. AGLISA nace para cubrir ese vacío.
+                        </span>
+                    </p>
+
+                    <p class="subtitulo-nivel">
+                        <span class="texto-primaria">Esto fue lo que encontramos en nuestro diagnóstico:</span>
+                        <span class="texto-secundaria">El diagnóstico Ishikawa de nuestro proyecto identificó tres causas:</span>
+                    </p>
+
+                    <div class="tarjetas">
+
+                        <article class="tarjeta">
+                            <div class="icono-tarjeta"><i class="fa-solid fa-laptop"></i></div>
+                            <h3>
+                                <span class="texto-primaria">Poca tecnología en clase</span>
+                                <span class="texto-secundaria">Tecnologías subutilizadas</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    Las computadoras y tablets casi no se usan para aprender sobre el agua.
+                                </span>
+                                <span class="texto-secundaria">
+                                    Las tecnologías educativas están subutilizadas para enseñar sostenibilidad hídrica.
+                                </span>
+                            </p>
+                        </article>
+
+                        <article class="tarjeta">
+                            <div class="icono-tarjeta"><i class="fa-solid fa-bullhorn"></i></div>
+                            <h3>
+                                <span class="texto-primaria">Mensajes que no llegan</span>
+                                <span class="texto-secundaria">Campañas poco eficaces</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    Los mensajes digitales para cuidar el agua no logran llamar nuestra atención.
+                                </span>
+                                <span class="texto-secundaria">
+                                    Las campañas digitales sobre el agua son ineficientes y no generan suficiente conciencia.
+                                </span>
+                            </p>
+                        </article>
+
+                        <article class="tarjeta">
+                            <div class="icono-tarjeta"><i class="fa-solid fa-book-open"></i></div>
+                            <h3>
+                                <span class="texto-primaria">Faltaba un lugar para aprender</span>
+                                <span class="texto-secundaria">Ausencia de plataformas</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    No había una página web en la escuela sobre el ODS 6. ¡Ahora sí la hay!
+                                </span>
+                                <span class="texto-secundaria">
+                                    No existían plataformas informativas sobre el ODS 6 en el entorno escolar.
+                                </span>
+                            </p>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="seccion-contenido seccion-mision" id="mision">
+
+                <div class="contenedor-ancho">
+
+                    <span class="etiqueta">Nuestra misión</span>
+
+                    <h2>
+                        <span class="texto-primaria">Cuidar el agua entre todos</span>
+                        <span class="texto-secundaria">Objetivo del proyecto</span>
+                    </h2>
+
+                    <p class="intro-nivel">
+                        <span class="texto-primaria">
+                            Queremos que descubras por qué el agua limpia y los baños limpios son
+                            importantes para todas las personas, y que aprendas a cuidar el agua
+                            todos los días.
+                        </span>
+                        <span class="texto-secundaria">
+                            Analizar la importancia del acceso al agua limpia y al saneamiento, y
+                            proponer una página web que promueva la concientización y el uso
+                            responsable del recurso hídrico, en el marco del ODS 6.
+                        </span>
+                    </p>
+
+                    <div class="tarjetas">
+
+                        <article class="tarjeta">
+                            <div class="icono-tarjeta"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <h3>
+                                <span class="texto-primaria">Misión 1: Descubrir</span>
+                                <span class="texto-secundaria">Objetivo 1: Identificar</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    Saber qué problemas hay con el agua y los baños en las escuelas.
+                                </span>
+                                <span class="texto-secundaria">
+                                    Identificar los principales problemas de acceso al agua potable y
+                                    al saneamiento en comunidades escolares.
+                                </span>
+                            </p>
+                        </article>
+
+                        <article class="tarjeta">
+                            <div class="icono-tarjeta"><i class="fa-solid fa-flask"></i></div>
+                            <h3>
+                                <span class="texto-primaria">Misión 2: Investigar</span>
+                                <span class="texto-secundaria">Objetivo 2: Investigar</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    Aprender cómo afectan a las personas el agua sucia y la falta de agua,
+                                    y cómo la tecnología puede ayudar a cuidarla.
+                                </span>
+                                <span class="texto-secundaria">
+                                    Investigar el impacto de la contaminación y la escasez del agua en la
+                                    sociedad y cómo las TI contribuyen a su gestión sostenible.
+                                </span>
+                            </p>
+                        </article>
+
+                        <article class="tarjeta">
+                            <div class="icono-tarjeta"><i class="fa-solid fa-share-nodes"></i></div>
+                            <h3>
+                                <span class="texto-primaria">Misión 3: Compartir</span>
+                                <span class="texto-secundaria">Objetivo 3: Diseñar</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    Crear esta página para que todos aprendamos a cuidar el agua.
+                                </span>
+                                <span class="texto-secundaria">
+                                    Diseñar una página web educativa que difunda información sobre el
+                                    ODS 6 y promueva la cultura del cuidado del agua.
+                                </span>
+                            </p>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="seccion-contenido seccion-metas" id="metas">
+
+                <div class="contenedor-ancho">
+
+                    <span class="etiqueta">Las metas del ODS 6</span>
+
+                    <h2>
+                        <span class="texto-primaria">Ocho metas para cuidar el agua</span>
+                        <span class="texto-secundaria">Metas del ODS 6</span>
+                    </h2>
+
+                    <p class="intro-nivel">
+                        <span class="texto-primaria">
+                            Estas son las metas que el mundo quiere cumplir. ¡Toca cada tarjeta para voltearla!
+                        </span>
+                        <span class="texto-secundaria">
+                            Estas son las metas del ODS 6 que los países se comprometieron a cumplir
+                            para 2030. Selecciona una tarjeta para ver su explicación.
+                        </span>
+                    </p>
+
+                    <div class="tarjetas-meta">
+
+                        <button class="meta" type="button" aria-pressed="false">
+                            <span class="meta-interior">
+                                <span class="meta-cara meta-frente">
+                                    <span class="meta-numero">Meta 6.1</span>
+                                    <i class="fa-solid fa-glass-water"></i>
+                                    <span class="meta-titulo">
+                                        <span class="texto-primaria">Agua para beber</span>
+                                        <span class="texto-secundaria">Agua potable</span>
+                                    </span>
+                                </span>
+                                <span class="meta-cara meta-reverso">
+                                    <span class="texto-primaria">
+                                        Que todas las personas tengan agua limpia y segura para beber,
+                                        y que puedan pagarla.
+                                    </span>
+                                    <span class="texto-secundaria">
+                                        Acceso universal y equitativo al agua potable segura y a un
+                                        precio asequible para todas las personas.
+                                    </span>
+                                </span>
+                            </span>
+                        </button>
+
+                        <button class="meta" type="button" aria-pressed="false">
+                            <span class="meta-interior">
+                                <span class="meta-cara meta-frente">
+                                    <span class="meta-numero">Meta 6.2</span>
+                                    <i class="fa-solid fa-hands-bubbles"></i>
+                                    <span class="meta-titulo">
+                                        <span class="texto-primaria">Baños y manos limpias</span>
+                                        <span class="texto-secundaria">Saneamiento e higiene</span>
+                                    </span>
+                                </span>
+                                <span class="meta-cara meta-reverso">
+                                    <span class="texto-primaria">
+                                        Que todos tengan baños limpios y puedan lavarse las manos,
+                                        sobre todo las niñas, las mujeres y quienes más lo necesitan.
+                                    </span>
+                                    <span class="texto-secundaria">
+                                        Acceso a servicios de saneamiento e higiene adecuados y equitativos,
+                                        con atención especial a mujeres, niñas y personas vulnerables.
+                                    </span>
+                                </span>
+                            </span>
+                        </button>
+
+                        <button class="meta" type="button" aria-pressed="false">
+                            <span class="meta-interior">
+                                <span class="meta-cara meta-frente">
+                                    <span class="meta-numero">Meta 6.3</span>
+                                    <i class="fa-solid fa-vial"></i>
+                                    <span class="meta-titulo">
+                                        <span class="texto-primaria">Agua más limpia</span>
+                                        <span class="texto-secundaria">Calidad del agua</span>
+                                    </span>
+                                </span>
+                                <span class="meta-cara meta-reverso">
+                                    <span class="texto-primaria">
+                                        Dejar de ensuciar los ríos y el mar, limpiar el agua sucia
+                                        y volver a usarla de forma segura.
+                                    </span>
+                                    <span class="texto-secundaria">
+                                        Reducir la contaminación, disminuir a la mitad las aguas residuales
+                                        sin tratar y aumentar el reciclaje y la reutilización segura.
+                                    </span>
+                                </span>
+                            </span>
+                        </button>
+
+                        <button class="meta" type="button" aria-pressed="false">
+                            <span class="meta-interior">
+                                <span class="meta-cara meta-frente">
+                                    <span class="meta-numero">Meta 6.4</span>
+                                    <i class="fa-solid fa-faucet"></i>
+                                    <span class="meta-titulo">
+                                        <span class="texto-primaria">No desperdiciar</span>
+                                        <span class="texto-secundaria">Uso eficiente</span>
+                                    </span>
+                                </span>
+                                <span class="meta-cara meta-reverso">
+                                    <span class="texto-primaria">
+                                        Usar solo el agua que necesitamos para que alcance para todos:
+                                        en las casas, las escuelas, el campo y las fábricas.
+                                    </span>
+                                    <span class="texto-secundaria">
+                                        Aumentar el uso eficiente del agua en todos los sectores y asegurar
+                                        una extracción sostenible para enfrentar la escasez.
+                                    </span>
+                                </span>
+                            </span>
+                        </button>
+
+                        <button class="meta" type="button" aria-pressed="false">
+                            <span class="meta-interior">
+                                <span class="meta-cara meta-frente">
+                                    <span class="meta-numero">Meta 6.5</span>
+                                    <i class="fa-solid fa-handshake"></i>
+                                    <span class="meta-titulo">
+                                        <span class="texto-primaria">Cuidarla juntos</span>
+                                        <span class="texto-secundaria">Gestión integrada</span>
+                                    </span>
+                                </span>
+                                <span class="meta-cara meta-reverso">
+                                    <span class="texto-primaria">
+                                        Que las personas, las ciudades y hasta los países se pongan
+                                        de acuerdo para cuidar y repartir bien el agua.
+                                    </span>
+                                    <span class="texto-secundaria">
+                                        Gestionar los recursos hídricos de forma integrada a todos los
+                                        niveles, incluso con cooperación entre países que comparten agua.
+                                    </span>
+                                </span>
+                            </span>
+                        </button>
+
+                        <button class="meta" type="button" aria-pressed="false">
+                            <span class="meta-interior">
+                                <span class="meta-cara meta-frente">
+                                    <span class="meta-numero">Meta 6.6</span>
+                                    <i class="fa-solid fa-tree"></i>
+                                    <span class="meta-titulo">
+                                        <span class="texto-primaria">Proteger la naturaleza</span>
+                                        <span class="texto-secundaria">Ecosistemas del agua</span>
+                                    </span>
+                                </span>
+                                <span class="meta-cara meta-reverso">
+                                    <span class="texto-primaria">
+                                        Cuidar los bosques, los ríos, los lagos y los humedales,
+                                        porque ellos ayudan a que haya agua limpia.
+                                    </span>
+                                    <span class="texto-secundaria">
+                                        Proteger y restablecer los bosques, montañas, humedales, ríos,
+                                        acuíferos y lagos relacionados con el agua.
+                                    </span>
+                                </span>
+                            </span>
+                        </button>
+
+                        <button class="meta" type="button" aria-pressed="false">
+                            <span class="meta-interior">
+                                <span class="meta-cara meta-frente">
+                                    <span class="meta-numero">Meta 6.a</span>
+                                    <i class="fa-solid fa-earth-americas"></i>
+                                    <span class="meta-titulo">
+                                        <span class="texto-primaria">Ayudarnos entre países</span>
+                                        <span class="texto-secundaria">Cooperación internacional</span>
+                                    </span>
+                                </span>
+                                <span class="meta-cara meta-reverso">
+                                    <span class="texto-primaria">
+                                        Los países que pueden ayudan a otros a aprender y a construir
+                                        lo que necesitan para tener agua y baños.
+                                    </span>
+                                    <span class="texto-secundaria">
+                                        Ampliar la cooperación internacional y el apoyo a países en
+                                        desarrollo para crear capacidad en agua y saneamiento.
+                                    </span>
+                                </span>
+                            </span>
+                        </button>
+
+                        <button class="meta" type="button" aria-pressed="false">
+                            <span class="meta-interior">
+                                <span class="meta-cara meta-frente">
+                                    <span class="meta-numero">Meta 6.b</span>
+                                    <i class="fa-solid fa-users"></i>
+                                    <span class="meta-titulo">
+                                        <span class="texto-primaria">Todos participamos</span>
+                                        <span class="texto-secundaria">Participación local</span>
+                                    </span>
+                                </span>
+                                <span class="meta-cara meta-reverso">
+                                    <span class="texto-primaria">
+                                        Las comunidades pueden opinar y ayudar a mejorar cómo se cuida
+                                        el agua en su lugar.
+                                    </span>
+                                    <span class="texto-secundaria">
+                                        Apoyar y fortalecer la participación de las comunidades locales
+                                        en la gestión del agua y el saneamiento.
+                                    </span>
+                                </span>
+                            </span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="seccion-contenido seccion-mapa" id="mapa">
+
+                <div class="contenedor-ancho">
+
+                    <span class="etiqueta">Mapa interactivo</span>
+
+                    <h2>
+                        <span class="texto-primaria">El agua en México</span>
+                        <span class="texto-secundaria">Acceso al agua entubada en México</span>
+                    </h2>
+
+                    <p class="intro-nivel">
+                        <span class="texto-primaria">
+                            Cada cuadrito es un estado de México. Tócalo para descubrir
+                            cuánta gente tiene agua en su casa.
+                        </span>
+                        <span class="texto-secundaria">
+                            Cada cuadro representa una entidad federativa. Selecciónala para ver
+                            datos sobre el acceso al agua entubada según el Censo 2020 del INEGI.
+                        </span>
+                    </p>
+
+                    <div class="mapa-contenedor">
+
+                        <div>
+
+                            <div class="cuadricula-mapa" id="cuadriculaMapa"></div>
+
+                            <div class="leyenda-mapa">
+                                <span><i class="cuadro-leyenda cuadro-alto"></i>Más de 95% con agua entubada</span>
+                                <span><i class="cuadro-leyenda cuadro-bajo"></i>Menos de 80% con agua entubada</span>
+                                <span><i class="cuadro-leyenda cuadro-rezago"></i>Dato de viviendas sin servicio</span>
+                                <span><i class="cuadro-leyenda cuadro-sin-dato"></i>Aún sin dato</span>
+                            </div>
+
+                            <p class="aviso-mapa">
+                                Los cuadros no tienen la forma real de los estados: están acomodados
+                                para que todos se vean del mismo tamaño.
+                            </p>
+
+                        </div>
+
+                        <div class="panel-estado" aria-live="polite">
+
+                            <h3 id="nombreEstado">Toca un estado</h3>
+
+                            <p class="cifra-estado" id="cifraEstado"></p>
+
+                            <p id="notaEstado">
+                                Descubre cuánta gente tiene agua entubada en cada parte de México.
+                            </p>
+
+                            <p class="fuente-estado" id="fuenteEstado"></p>
+
+                            <p class="dato-nacional">
+                                En todo México, 96.3% de las viviendas tiene agua entubada
+                                (INEGI, Censo 2020). En 2010 era 91.5%.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="seccion-contenido seccion-viaje" id="viaje">
+
+                <div class="contenedor-ancho">
+
+                    <span class="etiqueta">El viaje de una gota</span>
+
+                    <h2>
+                        <span class="texto-primaria">¡Sigue a la gota!</span>
+                        <span class="texto-secundaria">Del río a la planta de tratamiento</span>
+                    </h2>
+
+                    <p class="intro-nivel">
+                        <span class="texto-primaria">
+                            Toca "Siguiente" y mira cómo viaja la gota por el dibujo.
+                        </span>
+                        <span class="texto-secundaria">
+                            Avanza por cada etapa y observa el recorrido del agua en la ciudad,
+                            desde su origen hasta su tratamiento.
+                        </span>
+                    </p>
+
+                    <div class="escena-viaje">
+
+                        <svg class="dibujo-viaje" viewBox="0 0 800 520" role="img"
+                            aria-label="Dibujo del recorrido del agua: río, planta potabilizadora, tuberías, casa, drenaje y planta de tratamiento">
+
+                            <!-- Fondo y nubes -->
+                            <rect x="0" y="0" width="800" height="520" fill="#e0f7ff" />
+                            <g fill="#ffffff" opacity="0.9">
+                                <ellipse cx="250" cy="52" rx="46" ry="18" />
+                                <ellipse cx="282" cy="42" rx="30" ry="16" />
+                                <ellipse cx="560" cy="62" rx="50" ry="18" />
+                                <ellipse cx="592" cy="50" rx="32" ry="16" />
+                            </g>
+
+                            <!-- Flecha: el ciclo vuelve a empezar -->
+                            <path d="M 30 340 L 30 244" fill="none" stroke="#0096c7" stroke-width="4"
+                                stroke-dasharray="8 8" stroke-linecap="round" />
+                            <polygon points="30,224 20,248 40,248" fill="#0096c7" />
+
+                            <!-- Camino de la gota -->
+                            <path id="caminoGota"
+                                d="M 120 170 L 400 170 L 680 170 C 780 170 780 400 680 400 L 400 400 L 120 400"
+                                fill="none" stroke="#90e0ef" stroke-width="14" stroke-linecap="round" />
+                            <path d="M 120 170 L 400 170 L 680 170 C 780 170 780 400 680 400 L 400 400 L 120 400"
+                                fill="none" stroke="#ffffff" stroke-width="3" stroke-dasharray="2 12"
+                                stroke-linecap="round" />
+
+                            <!-- 1. El río -->
+                            <g class="estacion-viaje" data-indice="0" data-x="120" data-y="170">
+                                <circle class="halo-viaje" cx="120" cy="170" r="90" />
+                                <g transform="translate(120 170)">
+                                    <path d="M-70 20 Q-35 -70 5 20 Z" fill="#74c69d" />
+                                    <path d="M-20 20 Q30 -50 70 20 Z" fill="#52b788" />
+                                    <rect x="-70" y="20" width="140" height="36" fill="#48cae4" />
+                                    <path d="M-70 31 Q-52 23 -35 31 T0 31 T35 31 T70 31" fill="none"
+                                        stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+                                    <path d="M-70 45 Q-52 37 -35 45 T0 45 T35 45 T70 45" fill="none"
+                                        stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+                                    <rect x="38" y="-8" width="6" height="20" fill="#8d6e63" />
+                                    <circle cx="41" cy="-16" r="15" fill="#2d6a4f" />
+                                </g>
+                                <text class="rotulo-viaje" x="120" y="262" text-anchor="middle">El río</text>
+                                <circle class="insignia-viaje" cx="56" cy="96" r="15" />
+                                <text class="numero-insignia" x="56" y="102" text-anchor="middle">1</text>
+                            </g>
+
+                            <!-- 2. Planta potabilizadora -->
+                            <g class="estacion-viaje" data-indice="1" data-x="400" data-y="170">
+                                <circle class="halo-viaje" cx="400" cy="170" r="90" />
+                                <g transform="translate(400 170)">
+                                    <rect x="-70" y="-10" width="140" height="62" rx="6" fill="#ffffff"
+                                        stroke="#023e8a" stroke-width="4" />
+                                    <rect x="-58" y="-60" width="38" height="52" rx="6" fill="#caf0f8"
+                                        stroke="#023e8a" stroke-width="4" />
+                                    <rect x="-10" y="-46" width="38" height="38" rx="6" fill="#caf0f8"
+                                        stroke="#023e8a" stroke-width="4" />
+                                    <rect x="36" y="-34" width="24" height="26" rx="4" fill="#90e0ef"
+                                        stroke="#023e8a" stroke-width="4" />
+                                    <path d="M-52 -28 Q-39 -36 -26 -28" fill="none" stroke="#0077b6"
+                                        stroke-width="3" stroke-linecap="round" />
+                                    <path d="M-4 -24 Q9 -32 22 -24" fill="none" stroke="#0077b6"
+                                        stroke-width="3" stroke-linecap="round" />
+                                    <rect x="-20" y="18" width="40" height="34" rx="4" fill="#0096c7" />
+                                </g>
+                                <text class="rotulo-viaje" x="400" y="262" text-anchor="middle">Potabilizadora</text>
+                                <circle class="insignia-viaje" cx="336" cy="96" r="15" />
+                                <text class="numero-insignia" x="336" y="102" text-anchor="middle">2</text>
+                            </g>
+
+                            <!-- 3. Tuberías -->
+                            <g class="estacion-viaje" data-indice="2" data-x="680" data-y="170">
+                                <circle class="halo-viaje" cx="680" cy="170" r="90" />
+                                <g transform="translate(680 170)">
+                                    <rect x="-70" y="-30" width="140" height="22" rx="4" fill="#95d5b2" />
+                                    <rect x="-70" y="-10" width="140" height="62" rx="4" fill="#d8b98f" />
+                                    <rect x="-8" y="-12" width="16" height="50" rx="8" fill="#90e0ef"
+                                        stroke="#023e8a" stroke-width="4" />
+                                    <rect x="-62" y="12" width="124" height="16" rx="8" fill="#90e0ef"
+                                        stroke="#023e8a" stroke-width="4" />
+                                    <circle cx="0" cy="20" r="10" fill="#0077b6" stroke="#023e8a"
+                                        stroke-width="3" />
+                                </g>
+                                <text class="rotulo-viaje" x="680" y="262" text-anchor="middle">Tuberías</text>
+                                <circle class="insignia-viaje" cx="616" cy="96" r="15" />
+                                <text class="numero-insignia" x="616" y="102" text-anchor="middle">3</text>
+                            </g>
+
+                            <!-- 4. Tu casa -->
+                            <g class="estacion-viaje" data-indice="3" data-x="680" data-y="400">
+                                <circle class="halo-viaje" cx="680" cy="400" r="90" />
+                                <g transform="translate(680 400)">
+                                    <rect x="28" y="-52" width="14" height="28" fill="#cbd5e1" />
+                                    <rect x="-48" y="-14" width="96" height="66" fill="#ffffff"
+                                        stroke="#023e8a" stroke-width="4" />
+                                    <polygon points="-62,-14 0,-62 62,-14" fill="#f4a261" stroke="#023e8a"
+                                        stroke-width="4" stroke-linejoin="round" />
+                                    <rect x="-12" y="14" width="24" height="38" fill="#0096c7" />
+                                    <rect x="-40" y="0" width="20" height="20" fill="#caf0f8" stroke="#023e8a"
+                                        stroke-width="3" />
+                                    <rect x="20" y="0" width="20" height="20" fill="#caf0f8" stroke="#023e8a"
+                                        stroke-width="3" />
+                                </g>
+                                <text class="rotulo-viaje" x="680" y="492" text-anchor="middle">Tu casa</text>
+                                <circle class="insignia-viaje" cx="616" cy="326" r="15" />
+                                <text class="numero-insignia" x="616" y="332" text-anchor="middle">4</text>
+                            </g>
+
+                            <!-- 5. Drenaje -->
+                            <g class="estacion-viaje" data-indice="4" data-x="400" data-y="400">
+                                <circle class="halo-viaje" cx="400" cy="400" r="90" />
+                                <g transform="translate(400 400)">
+                                    <rect x="-70" y="-24" width="140" height="22" rx="4" fill="#9aa5b1" />
+                                    <rect x="-70" y="-2" width="140" height="56" rx="4" fill="#d8b98f" />
+                                    <ellipse cx="0" cy="-13" rx="34" ry="10" fill="#6b7280" stroke="#374151"
+                                        stroke-width="3" />
+                                    <path d="M-22 -13 H22 M-10 -19 V-7 M10 -19 V-7" fill="none" stroke="#374151"
+                                        stroke-width="3" />
+                                    <rect x="-62" y="20" width="124" height="18" rx="9" fill="#b0b7c3"
+                                        stroke="#4b5563" stroke-width="4" />
+                                </g>
+                                <text class="rotulo-viaje" x="400" y="492" text-anchor="middle">Drenaje</text>
+                                <circle class="insignia-viaje" cx="336" cy="326" r="15" />
+                                <text class="numero-insignia" x="336" y="332" text-anchor="middle">5</text>
+                            </g>
+
+                            <!-- 6. Planta de tratamiento -->
+                            <g class="estacion-viaje" data-indice="5" data-x="120" data-y="400">
+                                <circle class="halo-viaje" cx="120" cy="400" r="90" />
+                                <g transform="translate(120 400)">
+                                    <rect x="-60" y="-40" width="120" height="44" rx="6" fill="#ffffff"
+                                        stroke="#023e8a" stroke-width="4" />
+                                    <rect x="-44" y="-28" width="20" height="18" fill="#caf0f8" stroke="#023e8a"
+                                        stroke-width="3" />
+                                    <rect x="-10" y="-28" width="20" height="18" fill="#caf0f8" stroke="#023e8a"
+                                        stroke-width="3" />
+                                    <ellipse cx="-28" cy="26" rx="34" ry="14" fill="#90e0ef" stroke="#023e8a"
+                                        stroke-width="4" />
+                                    <ellipse cx="38" cy="26" rx="28" ry="12" fill="#caf0f8" stroke="#023e8a"
+                                        stroke-width="4" />
+                                    <path d="M-44 26 Q-28 20 -12 26" fill="none" stroke="#0077b6"
+                                        stroke-width="3" stroke-linecap="round" />
+                                    <path d="M28 26 Q38 22 48 26" fill="none" stroke="#0077b6"
+                                        stroke-width="3" stroke-linecap="round" />
+                                    <path d="M40 -14 C40 -44 66 -48 66 -48 C66 -48 66 -18 40 -14 Z"
+                                        fill="#52b788" />
+                                </g>
+                                <text class="rotulo-viaje" x="120" y="492" text-anchor="middle">Tratamiento</text>
+                                <circle class="insignia-viaje" cx="56" cy="326" r="15" />
+                                <text class="numero-insignia" x="56" y="332" text-anchor="middle">6</text>
+                            </g>
+
+                            <!-- La gota que viaja -->
+                            <g id="gotaViaje" transform="translate(120 170)">
+                                <g class="gota-flotando">
+                                    <g transform="translate(-30 -35) scale(0.3)">
+                                        <path d="M100 16 C100 16 42 92 42 152 C42 186 68 214 100 214 C132 214 158 186 158 152 C158 92 100 16 100 16 Z"
+                                            fill="#48cae4" stroke="#023e8a" stroke-width="12" stroke-linejoin="round" />
+                                        <circle cx="80" cy="146" r="14" fill="#ffffff" />
+                                        <circle cx="120" cy="146" r="14" fill="#ffffff" />
+                                        <circle cx="80" cy="146" r="7" fill="#023e8a" />
+                                        <circle cx="120" cy="146" r="7" fill="#023e8a" />
+                                        <path d="M86 172 Q100 190 114 172" fill="none" stroke="#023e8a"
+                                            stroke-width="8" stroke-linecap="round" />
+                                    </g>
+                                </g>
+                            </g>
+
+                        </svg>
+
+                    </div>
+
+                    <div class="controles-viaje">
+
+                        <button class="boton-viaje" id="botonViajeAnterior" type="button">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Anterior
+                        </button>
+
+                        <div class="puntos-viaje">
+                            <button class="punto-viaje activo" type="button" data-indice="0" aria-label="Ir al paso 1">1</button>
+                            <button class="punto-viaje" type="button" data-indice="1" aria-label="Ir al paso 2">2</button>
+                            <button class="punto-viaje" type="button" data-indice="2" aria-label="Ir al paso 3">3</button>
+                            <button class="punto-viaje" type="button" data-indice="3" aria-label="Ir al paso 4">4</button>
+                            <button class="punto-viaje" type="button" data-indice="4" aria-label="Ir al paso 5">5</button>
+                            <button class="punto-viaje" type="button" data-indice="5" aria-label="Ir al paso 6">6</button>
+                        </div>
+
+                        <button class="boton-viaje" id="botonViajeSiguiente" type="button">
+                            Siguiente
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="detalle-viaje" aria-live="polite">
+
+                        <article class="detalle-etapa">
+                            <span class="numero-etapa">Paso 1 de 6</span>
+                            <h3>
+                                <span class="texto-primaria">El río</span>
+                                <span class="texto-secundaria">Fuentes de agua</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    Todo empieza en la naturaleza. La lluvia llena los ríos, los lagos
+                                    y el agua que está bajo la tierra. De ahí se toma el agua.
+                                </span>
+                                <span class="texto-secundaria">
+                                    El agua se capta de fuentes superficiales (ríos, lagos y presas)
+                                    o subterráneas (pozos y acuíferos).
+                                </span>
+                            </p>
+                        </article>
+
+                        <article class="detalle-etapa" hidden>
+                            <span class="numero-etapa">Paso 2 de 6</span>
+                            <h3>
+                                <span class="texto-primaria">La planta potabilizadora</span>
+                                <span class="texto-secundaria">Potabilización</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    Aquí se limpia el agua para que sea segura para beber.
+                                    Se quitan la tierra y los gérmenes.
+                                </span>
+                                <span class="texto-secundaria">
+                                    Se eliminan sólidos y microorganismos mediante procesos como la
+                                    filtración y la desinfección para volver el agua potable.
+                                </span>
+                            </p>
+                        </article>
+
+                        <article class="detalle-etapa" hidden>
+                            <span class="numero-etapa">Paso 3 de 6</span>
+                            <h3>
+                                <span class="texto-primaria">Las tuberías</span>
+                                <span class="texto-secundaria">Red de distribución</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    El agua viaja por tubos debajo de la calle hasta llegar a
+                                    cada casa y a cada escuela.
+                                </span>
+                                <span class="texto-secundaria">
+                                    Una red de tuberías y tanques distribuye el agua. Las fugas en
+                                    la red desperdician agua antes de que llegue a las viviendas.
+                                </span>
+                            </p>
+                        </article>
+
+                        <article class="detalle-etapa" hidden>
+                            <span class="numero-etapa">Paso 4 de 6</span>
+                            <h3>
+                                <span class="texto-primaria">Tu casa</span>
+                                <span class="texto-secundaria">Consumo en el hogar</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    Usamos el agua para tomar, bañarnos, cocinar y lavar.
+                                    ¡Aquí tú puedes ayudar cerrando la llave!
+                                </span>
+                                <span class="texto-secundaria">
+                                    El consumo doméstico depende de nuestros hábitos: bañarse en menos
+                                    tiempo y reparar fugas ayuda a reducir el gasto de agua.
+                                </span>
+                            </p>
+                        </article>
+
+                        <article class="detalle-etapa" hidden>
+                            <span class="numero-etapa">Paso 5 de 6</span>
+                            <h3>
+                                <span class="texto-primaria">El drenaje</span>
+                                <span class="texto-secundaria">Alcantarillado</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    Después de usarla, el agua sucia se va por el drenaje.
+                                    Por eso no hay que tirar basura al inodoro ni al lavabo.
+                                </span>
+                                <span class="texto-secundaria">
+                                    El agua usada se recolecta por el alcantarillado. La basura y los
+                                    aceites que se tiran dañan la red y complican el tratamiento.
+                                </span>
+                            </p>
+                        </article>
+
+                        <article class="detalle-etapa" hidden>
+                            <span class="numero-etapa">Paso 6 de 6</span>
+                            <h3>
+                                <span class="texto-primaria">La planta de tratamiento</span>
+                                <span class="texto-secundaria">Tratamiento de aguas residuales</span>
+                            </h3>
+                            <p>
+                                <span class="texto-primaria">
+                                    Aquí el agua sucia se limpia otra vez antes de volver a un río
+                                    o al mar, o de usarse para regar.
+                                </span>
+                                <span class="texto-secundaria">
+                                    El agua residual se trata para reducir sus contaminantes antes de
+                                    devolverla al ambiente o reutilizarla, por ejemplo en el riego.
+                                </span>
+                            </p>
+                        </article>
+
+                    </div>
+
+                    <p class="cierre-recorrido">
+                        <span class="texto-primaria">
+                            Y cuando el agua vuelve a la naturaleza, ¡la historia empieza otra vez!
+                        </span>
+                        <span class="texto-secundaria">
+                            El agua tratada regresa al ambiente o se reutiliza, y el ciclo continúa.
+                        </span>
+                    </p>
+
+                </div>
+
+            </section>
+
+            <section class="seccion-contenido seccion-acciones" id="actua">
+
+                <div class="contenedor-ancho">
+
+                    <span class="etiqueta">Actúa</span>
+
+                    <h2>
+                        <span class="texto-primaria">¿Qué puedo hacer yo?</span>
+                        <span class="texto-secundaria">Pequeñas acciones, gran diferencia</span>
+                    </h2>
+
+                    <p class="intro-nivel">
+                        <span class="texto-primaria">
+                            Elige las acciones que te comprometes a hacer. ¡Cada una ayuda a cuidar el agua!
+                        </span>
+                        <span class="texto-secundaria">
+                            Selecciona las acciones que te comprometes a realizar. Tu progreso
+                            se guarda en este navegador.
+                        </span>
+                    </p>
+
+                    <div class="medidor-compromisos">
+                        <div class="texto-medidor">
+                            <span id="textoCompromisos">0 de 8 compromisos</span>
+                        </div>
+                        <div class="barra-compromisos">
+                            <span id="avanceCompromisos"></span>
+                        </div>
+                        <p class="mensaje-compromisos" id="mensajeCompromisos" aria-live="polite"></p>
+                    </div>
+
+                    <div class="grupos-acciones">
+
+                        <div class="grupo-acciones">
+
+                            <h3><i class="fa-solid fa-house"></i> En casa</h3>
+
+                            <label class="compromiso">
+                                <input type="checkbox">
+                                <span class="marca-compromiso"></span>
+                                <span class="texto-compromiso">
+                                    <span class="texto-primaria">Cierro la llave al cepillarme los dientes y al enjabonarme.</span>
+                                    <span class="texto-secundaria">Cierro la llave al cepillarme los dientes y al enjabonarme las manos.</span>
+                                </span>
+                            </label>
+
+                            <label class="compromiso">
+                                <input type="checkbox">
+                                <span class="marca-compromiso"></span>
+                                <span class="texto-compromiso">
+                                    <span class="texto-primaria">Me baño en menos tiempo.</span>
+                                    <span class="texto-secundaria">Reduzco mi tiempo de ducha y cierro la regadera al enjabonarme.</span>
+                                </span>
+                            </label>
+
+                            <label class="compromiso">
+                                <input type="checkbox">
+                                <span class="marca-compromiso"></span>
+                                <span class="texto-compromiso">
+                                    <span class="texto-primaria">Si veo una llave que gotea, aviso a un adulto para que la arreglen.</span>
+                                    <span class="texto-secundaria">Reporto las fugas en llaves, tuberías o inodoros para que se reparen pronto.</span>
+                                </span>
+                            </label>
+
+                            <label class="compromiso">
+                                <input type="checkbox">
+                                <span class="marca-compromiso"></span>
+                                <span class="texto-compromiso">
+                                    <span class="texto-primaria">Reutilizo el agua que ya usé, por ejemplo para regar las plantas.</span>
+                                    <span class="texto-secundaria">Reutilizo agua ya usada (por ejemplo, para regar plantas o limpiar) cuando es seguro hacerlo.</span>
+                                </span>
+                            </label>
+
+                        </div>
+
+                        <div class="grupo-acciones">
+
+                            <h3><i class="fa-solid fa-school"></i> En la escuela</h3>
+
+                            <label class="compromiso">
+                                <input type="checkbox">
+                                <span class="marca-compromiso"></span>
+                                <span class="texto-compromiso">
+                                    <span class="texto-primaria">Reviso que las llaves del baño de la escuela queden bien cerradas.</span>
+                                    <span class="texto-secundaria">Verifico que las llaves del baño de la escuela queden bien cerradas.</span>
+                                </span>
+                            </label>
+
+                            <label class="compromiso">
+                                <input type="checkbox">
+                                <span class="marca-compromiso"></span>
+                                <span class="texto-compromiso">
+                                    <span class="texto-primaria">Me lavo las manos con agua y jabón.</span>
+                                    <span class="texto-secundaria">Me lavo las manos con agua y jabón y cierro la llave mientras me enjabono.</span>
+                                </span>
+                            </label>
+
+                            <label class="compromiso">
+                                <input type="checkbox">
+                                <span class="marca-compromiso"></span>
+                                <span class="texto-compromiso">
+                                    <span class="texto-primaria">No tiro basura al inodoro ni a la coladera.</span>
+                                    <span class="texto-secundaria">No tiro basura, toallitas ni aceite por el inodoro, el lavabo o la coladera.</span>
+                                </span>
+                            </label>
+
+                            <label class="compromiso">
+                                <input type="checkbox">
+                                <span class="marca-compromiso"></span>
+                                <span class="texto-compromiso">
+                                    <span class="texto-primaria">Platico con mi familia y mis compañeros sobre cómo cuidar el agua.</span>
+                                    <span class="texto-secundaria">Comparto lo que aprendí en AGLISA con mi familia y mis compañeros.</span>
+                                </span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="seccion-contenido seccion-quiz" id="quiz">
+
+                <div class="contenedor-ancho">
+
+                    <span class="etiqueta">Mitos y verdades</span>
+
+                    <h2>
+                        <span class="texto-primaria">¿Mito o verdad?</span>
+                        <span class="texto-secundaria">Mitos y verdades del agua</span>
+                    </h2>
+
+                    <p class="intro-nivel">
+                        <span class="texto-primaria">
+                            Lee cada frase y elige si es verdad o si es un mito.
+                        </span>
+                        <span class="texto-secundaria">
+                            Decide si cada afirmación es verdadera o es un mito y revisa la explicación.
+                        </span>
+                    </p>
+
+                    <div class="tarjeta-quiz">
+
+                        <div id="vistaPregunta">
+
+                            <p class="progreso-quiz" id="progresoQuiz">Pregunta 1 de 7</p>
+
+                            <p class="afirmacion-quiz" id="afirmacionQuiz"></p>
+
+                            <div class="botones-quiz">
+                                <button class="boton-respuesta" id="botonVerdad" type="button">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    Verdad
+                                </button>
+                                <button class="boton-respuesta" id="botonMito" type="button">
+                                    <i class="fa-solid fa-circle-xmark"></i>
+                                    Mito
+                                </button>
+                            </div>
+
+                            <div class="retroalimentacion-quiz" id="retroalimentacionQuiz" aria-live="polite" hidden>
+                                <p class="resultado-respuesta" id="resultadoRespuesta"></p>
+                                <p id="explicacionQuiz"></p>
+                                <button class="boton-siguiente-quiz" id="botonSiguienteQuiz" type="button">
+                                    Siguiente
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="vista-final" id="vistaFinal" hidden>
+                            <i class="fa-solid fa-trophy"></i>
+                            <h3 id="tituloFinalQuiz"></h3>
+                            <p id="textoFinalQuiz"></p>
+                            <button class="boton-siguiente-quiz" id="botonReiniciarQuiz" type="button">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                Jugar otra vez
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <footer class="pie">
+
+            <p class="pie-texto">
+                <strong>AGLISA</strong> · Agua Limpia y Saneamiento<br>
+                Proyecto final · Universidad Autónoma de Baja California Sur · Departamento de Sistemas
+            </p>
+
+        </footer>
+
+        <button class="boton-calculadora-flotante" id="abrirCalculadora" type="button">
+            <i class="fa-solid fa-calculator"></i>
+            Calcula tu agua
+        </button>
+
+        <!-- CALCULADORA DE AGUA -->
+        <div class="modal-calculadora" id="modalCalculadora" aria-hidden="true">
+
+            <div class="contenido-calculadora">
+
+                <button class="boton-cerrar" id="cerrarCalculadora" type="button" aria-label="Cerrar calculadora">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="icono-modal">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <h2>¿Cuánta agua gastas?</h2>
+
+                <p class="texto-modal">Responde 12 preguntas y descubre cuánta agua usas al día.</p>
+
+                <div class="progreso-calculadora">
+                    <div class="texto-progreso">
+                        <span id="numeroPregunta">Pregunta 1 de 12</span>
+                        <span id="porcentajePregunta">8%</span>
+                    </div>
+
+                    <div class="barra-progreso">
+                        <span id="avanceProgreso"></span>
+                    </div>
+                </div>
+
+                <form id="formularioCalculadora">
+
+                    <!-- 1. Minutos en la regadera -->
+                    <div class="paso-calculadora paso-activo" data-tipo="numero" data-nombre="minutosDucha"
+                        data-minimo="1" data-maximo="40" data-inicial="8"
+                        data-singular="minuto" data-plural="minutos">
+                        <div class="icono-pregunta"><i class="fa-solid fa-shower"></i></div>
+                        <h3>¿Cuántos minutos te bañas?</h3>
+                        <p class="ayuda-pregunta">Cuenta desde que abres la regadera hasta que la cierras.</p>
+                        <div class="contador">
+                            <button class="boton-contador" type="button" data-cambio="-1" aria-label="Quitar uno">−</button>
+                            <div class="valor-contador" aria-live="polite">
+                                <span class="numero-contador">8</span>
+                                <span class="unidad-contador">minutos</span>
+                            </div>
+                            <button class="boton-contador" type="button" data-cambio="1" aria-label="Sumar uno">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Regadera al enjabonarse -->
+                    <div class="paso-calculadora" data-tipo="opciones" data-nombre="regaderaJabon">
+                        <div class="icono-pregunta"><i class="fa-solid fa-hand-holding-droplet"></i></div>
+                        <h3>Mientras te enjabonas, ¿cierras la regadera?</h3>
+                        <p class="ayuda-pregunta">Cuando te pones jabón o champú.</p>
+                        <div class="opciones-calculadora">
+                            <label class="opcion-calculadora"><input type="radio" name="regaderaJabon" value="siempre"><span class="contenido-opcion"><i class="fa-solid fa-circle-check"></i><strong>Sí, siempre</strong></span></label>
+                            <label class="opcion-calculadora"><input type="radio" name="regaderaJabon" value="aveces"><span class="contenido-opcion"><i class="fa-solid fa-circle-half-stroke"></i><strong>A veces</strong></span></label>
+                            <label class="opcion-calculadora"><input type="radio" name="regaderaJabon" value="nunca"><span class="contenido-opcion"><i class="fa-solid fa-faucet-drip"></i><strong>No, la dejo abierta</strong></span></label>
+                        </div>
+                    </div>
+
+                    <!-- 3. Veces que se cepilla los dientes -->
+                    <div class="paso-calculadora" data-tipo="numero" data-nombre="vecesDientes"
+                        data-minimo="0" data-maximo="6" data-inicial="3"
+                        data-singular="vez al día" data-plural="veces al día">
+                        <div class="icono-pregunta"><i class="fa-solid fa-tooth"></i></div>
+                        <h3>¿Cuántas veces al día te cepillas los dientes?</h3>
+                        <p class="ayuda-pregunta">Cuenta la mañana, la tarde y la noche.</p>
+                        <div class="contador">
+                            <button class="boton-contador" type="button" data-cambio="-1" aria-label="Quitar uno">−</button>
+                            <div class="valor-contador" aria-live="polite">
+                                <span class="numero-contador">3</span>
+                                <span class="unidad-contador">veces al día</span>
+                            </div>
+                            <button class="boton-contador" type="button" data-cambio="1" aria-label="Sumar uno">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 4. Llave al cepillarse -->
+                    <div class="paso-calculadora" data-tipo="opciones" data-nombre="llaveDientes">
+                        <div class="icono-pregunta"><i class="fa-solid fa-faucet"></i></div>
+                        <h3>Cuando te cepillas, ¿cierras la llave?</h3>
+                        <p class="ayuda-pregunta">Si usas un vasito con agua, cuenta como cerrada.</p>
+                        <div class="opciones-calculadora">
+                            <label class="opcion-calculadora"><input type="radio" name="llaveDientes" value="siempre"><span class="contenido-opcion"><i class="fa-solid fa-circle-check"></i><strong>Sí, siempre</strong></span></label>
+                            <label class="opcion-calculadora"><input type="radio" name="llaveDientes" value="aveces"><span class="contenido-opcion"><i class="fa-solid fa-circle-half-stroke"></i><strong>A veces</strong></span></label>
+                            <label class="opcion-calculadora"><input type="radio" name="llaveDientes" value="nunca"><span class="contenido-opcion"><i class="fa-solid fa-faucet-drip"></i><strong>No, la dejo abierta</strong></span></label>
+                        </div>
+                    </div>
+
+                    <!-- 5. Veces que se lava las manos -->
+                    <div class="paso-calculadora" data-tipo="numero" data-nombre="vecesManos"
+                        data-minimo="0" data-maximo="20" data-inicial="5"
+                        data-singular="vez al día" data-plural="veces al día">
+                        <div class="icono-pregunta"><i class="fa-solid fa-hands-bubbles"></i></div>
+                        <h3>¿Cuántas veces al día te lavas las manos?</h3>
+                        <p class="ayuda-pregunta">Antes de comer, después de ir al baño, en la escuela...</p>
+                        <div class="contador">
+                            <button class="boton-contador" type="button" data-cambio="-1" aria-label="Quitar uno">−</button>
+                            <div class="valor-contador" aria-live="polite">
+                                <span class="numero-contador">5</span>
+                                <span class="unidad-contador">veces al día</span>
+                            </div>
+                            <button class="boton-contador" type="button" data-cambio="1" aria-label="Sumar uno">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 6. Llave al lavarse las manos -->
+                    <div class="paso-calculadora" data-tipo="opciones" data-nombre="llaveManos">
+                        <div class="icono-pregunta"><i class="fa-solid fa-hand-sparkles"></i></div>
+                        <h3>Mientras te enjabonas las manos, ¿cierras la llave?</h3>
+                        <p class="ayuda-pregunta">Mientras te frotas con jabón.</p>
+                        <div class="opciones-calculadora">
+                            <label class="opcion-calculadora"><input type="radio" name="llaveManos" value="siempre"><span class="contenido-opcion"><i class="fa-solid fa-circle-check"></i><strong>Sí, siempre</strong></span></label>
+                            <label class="opcion-calculadora"><input type="radio" name="llaveManos" value="aveces"><span class="contenido-opcion"><i class="fa-solid fa-circle-half-stroke"></i><strong>A veces</strong></span></label>
+                            <label class="opcion-calculadora"><input type="radio" name="llaveManos" value="nunca"><span class="contenido-opcion"><i class="fa-solid fa-faucet-drip"></i><strong>No, la dejo abierta</strong></span></label>
+                        </div>
+                    </div>
+
+                    <!-- 7. Veces que usa el baño -->
+                    <div class="paso-calculadora" data-tipo="numero" data-nombre="vecesBano"
+                        data-minimo="1" data-maximo="15" data-inicial="5"
+                        data-singular="vez al día" data-plural="veces al día">
+                        <div class="icono-pregunta"><i class="fa-solid fa-restroom"></i></div>
+                        <h3>¿Cuántas veces al día usas el baño?</h3>
+                        <p class="ayuda-pregunta">Cuenta las veces en tu casa y en la escuela.</p>
+                        <div class="contador">
+                            <button class="boton-contador" type="button" data-cambio="-1" aria-label="Quitar uno">−</button>
+                            <div class="valor-contador" aria-live="polite">
+                                <span class="numero-contador">5</span>
+                                <span class="unidad-contador">veces al día</span>
+                            </div>
+                            <button class="boton-contador" type="button" data-cambio="1" aria-label="Sumar uno">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 8. Tipo de inodoro -->
+                    <div class="paso-calculadora" data-tipo="opciones" data-nombre="tipoInodoro">
+                        <div class="icono-pregunta"><i class="fa-solid fa-toilet"></i></div>
+                        <h3>¿Cómo es el inodoro que más usas?</h3>
+                        <p class="ayuda-pregunta">Si no sabes, elige "No lo sé".</p>
+                        <div class="opciones-calculadora">
+                            <label class="opcion-calculadora"><input type="radio" name="tipoInodoro" value="botones"><span class="contenido-opcion"><i class="fa-solid fa-toggle-on"></i><strong>Tiene dos botones</strong></span></label>
+                            <label class="opcion-calculadora"><input type="radio" name="tipoInodoro" value="palanca"><span class="contenido-opcion"><i class="fa-solid fa-toilet"></i><strong>Tiene un botón o una palanca</strong></span></label>
+                            <label class="opcion-calculadora"><input type="radio" name="tipoInodoro" value="nosabe"><span class="contenido-opcion"><i class="fa-solid fa-circle-question"></i><strong>No lo sé</strong></span></label>
+                        </div>
+                    </div>
+
+                    <!-- 9. Veces que lava platos -->
+                    <div class="paso-calculadora" data-tipo="numero" data-nombre="vecesPlatos"
+                        data-minimo="0" data-maximo="21" data-inicial="3"
+                        data-singular="vez a la semana" data-plural="veces a la semana">
+                        <div class="icono-pregunta"><i class="fa-solid fa-utensils"></i></div>
+                        <h3>¿Cuántas veces a la semana ayudas a lavar los platos?</h3>
+                        <p class="ayuda-pregunta">Cada vez que ayudas cuenta, aunque sean pocos platos.</p>
+                        <div class="contador">
+                            <button class="boton-contador" type="button" data-cambio="-1" aria-label="Quitar uno">−</button>
+                            <div class="valor-contador" aria-live="polite">
+                                <span class="numero-contador">3</span>
+                                <span class="unidad-contador">veces a la semana</span>
+                            </div>
+                            <button class="boton-contador" type="button" data-cambio="1" aria-label="Sumar uno">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 10. Llave al lavar platos -->
+                    <div class="paso-calculadora" data-tipo="opciones" data-nombre="llavePlatos">
+                        <div class="icono-pregunta"><i class="fa-solid fa-sink"></i></div>
+                        <h3>Al lavar platos, ¿cierras la llave mientras los enjabonas?</h3>
+                        <p class="ayuda-pregunta">Si no ayudas con los platos, elige cualquiera.</p>
+                        <div class="opciones-calculadora">
+                            <label class="opcion-calculadora"><input type="radio" name="llavePlatos" value="siempre"><span class="contenido-opcion"><i class="fa-solid fa-circle-check"></i><strong>Sí, siempre</strong></span></label>
+                            <label class="opcion-calculadora"><input type="radio" name="llavePlatos" value="aveces"><span class="contenido-opcion"><i class="fa-solid fa-circle-half-stroke"></i><strong>A veces</strong></span></label>
+                            <label class="opcion-calculadora"><input type="radio" name="llavePlatos" value="nunca"><span class="contenido-opcion"><i class="fa-solid fa-faucet-drip"></i><strong>No, la dejo abierta</strong></span></label>
+                        </div>
+                    </div>
+
+                    <!-- 11. Lavadas de ropa en casa -->
+                    <div class="paso-calculadora" data-tipo="numero" data-nombre="lavadasRopa"
+                        data-minimo="0" data-maximo="14" data-inicial="3"
+                        data-singular="lavada a la semana" data-plural="lavadas a la semana">
+                        <div class="icono-pregunta"><i class="fa-solid fa-shirt"></i></div>
+                        <h3>¿Cuántas veces a la semana se lava ropa en tu casa?</h3>
+                        <p class="ayuda-pregunta">Una lavada es una carga completa de ropa.</p>
+                        <div class="contador">
+                            <button class="boton-contador" type="button" data-cambio="-1" aria-label="Quitar uno">−</button>
+                            <div class="valor-contador" aria-live="polite">
+                                <span class="numero-contador">3</span>
+                                <span class="unidad-contador">lavadas a la semana</span>
+                            </div>
+                            <button class="boton-contador" type="button" data-cambio="1" aria-label="Sumar uno">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 12. Personas en casa -->
+                    <div class="paso-calculadora" data-tipo="numero" data-nombre="personasCasa"
+                        data-minimo="1" data-maximo="15" data-inicial="4"
+                        data-singular="persona" data-plural="personas">
+                        <div class="icono-pregunta"><i class="fa-solid fa-users"></i></div>
+                        <h3>¿Cuántas personas viven en tu casa?</h3>
+                        <p class="ayuda-pregunta">Cuéntate a ti también. Sirve para repartir el agua de la ropa entre todos.</p>
+                        <div class="contador">
+                            <button class="boton-contador" type="button" data-cambio="-1" aria-label="Quitar uno">−</button>
+                            <div class="valor-contador" aria-live="polite">
+                                <span class="numero-contador">4</span>
+                                <span class="unidad-contador">personas</span>
+                            </div>
+                            <button class="boton-contador" type="button" data-cambio="1" aria-label="Sumar uno">+</button>
+                        </div>
+                    </div>
+
+                    <p class="mensaje-calculadora" id="mensajeCalculadora" aria-live="polite"></p>
+
+                    <div class="botones-calculadora">
+                        <button class="boton-anterior" id="botonAnterior" type="button">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Anterior
+                        </button>
+
+                        <button class="boton-siguiente" id="botonSiguiente" type="button">
+                            Siguiente
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </form>
+
+                <div class="resultado-calculadora" id="resultadoCalculadora" aria-live="polite">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    <h3 id="tituloResultado"></h3>
+
+                    <p class="numero-resultado"><span id="litrosResultado"></span> litros al día</p>
+
+                    <div class="medidor-resultado">
+                        <span class="relleno-medidor" id="rellenoMedidor"></span>
+                        <span class="marca-referencia"></span>
+                    </div>
+
+                    <p class="texto-referencia">La marca naranja es una referencia de 100 litros al día.</p>
+
+                    <p id="textoResultado"></p>
+
+                    <div class="desglose" id="desgloseResultado"></div>
+
+                    <p class="consejo-agua" id="consejoAgua"></p>
+
+                    <p class="nota-resultado">
+                        Es una estimación con valores promedio. El gasto real depende de tu regadera,
+                        tus llaves y tu inodoro.
+                    </p>
+
+                    <button class="boton-reiniciar" id="botonReiniciar" type="button">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        Intentar otra vez
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/funciones.js"></script>
+
+</body>
+</html>
